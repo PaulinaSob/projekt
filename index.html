@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator pól</title>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    #container{
+        margin: 2vw;
+        display:flex;
+        justify-content: space-evenly;
+    }
+    body{
+        background-image:url("tlo.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #wybor{
+        background-color: rgba(0, 0, 0, 0.452);
+        color:white;
+        border-radius: 3vw;
+        text-align: center;
+        padding:10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #wybor *{
+        margin:10px;
+    }
+    input{
+        border-radius: 20vw;
+        padding:10px;
+        color:white;
+        background-color: rgba(0, 0, 0, 0.705);
+    }
+    input:nth-of-type(4){
+        border-radius:1vw;
+        padding:0;
+        height:50px;
+        width:100px;
+        color:white;
+        background-color: rgba(0, 0, 0, 0.705);
+    }
+    select{
+        padding:10px;
+        border-radius: 20vw;
+        color:white;
+        background-color: rgba(0, 0, 0, 0.705);
+    }
+    button{
+        padding:10px;
+        border-radius: 20vw;
+        color:white;
+        background-color: rgba(0, 0, 0, 0.705);
+    }
+
+    #card{
+        color:white;
+        border-radius: 3vw;
+        text-align: center;
+        padding:10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+            }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <div id="wybor">
+    <h1>Kreator karty piosenkarza</h1>
+    <h3>Nagłówek:</h3>
+    <input type="text" id="naglowek">
+    <h3>Piosenkarz:</h3>
+    <select>
+        <option id="shawn">Shawn Mendes</option>
+        <option id="sia">Sia</option>
+        <option id="bruno">Bruno Mars</option>
+        <option id="alan">Alan Walker</option>
+    </select>
+    <h3>Tekst:</h3>
+    <input type="text" id="tekst">
+    <h3>Opis:</h3>
+    <input type="text" id="opis">
+    <h3>Kolor:</h3>
+    <input type="color" id="kolor">
+    <button id="generuj">Generuj</button>
+    </div>
+    
+    <div id="card">
+        <div id="header"></div>
+        <div id="image"></div>
+        <div id="text"></div>
+        <div id="flavor"></div>
+    </div>
+</div>
+    <script>
+
+   </script>
+</body>
+</html>
