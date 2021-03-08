@@ -10,6 +10,7 @@
         margin:0;
         padding:0;
         box-sizing: border-box;
+        font-family:cursive;
     }
     #container{
         margin: 2vw;
@@ -33,7 +34,7 @@
         justify-content: center;
     }
     #wybor *{
-        margin:10px;
+        margin:5px;
     }
     input{
         border-radius: 20vw;
@@ -42,6 +43,14 @@
         background-color: rgba(0, 0, 0, 0.705);
     }
     input:nth-of-type(4){
+        border-radius:1vw;
+        padding:0;
+        height:50px;
+        width:100px;
+        color:white;
+        background-color: rgba(0, 0, 0, 0.705);
+    }
+    input:nth-of-type(5){
         border-radius:1vw;
         padding:0;
         height:50px;
@@ -63,8 +72,8 @@
     }
 
     #card{
-        color:white;
         border-radius: 3vw;
+        width:20rem;
         text-align: center;
         padding:10px;
         display: flex;
@@ -72,6 +81,27 @@
         align-items: center;
         justify-content: center;
             }
+    #card #header,#text{
+        margin:30px;
+        font-size:3rem;
+    }
+    #flavor{
+        font-size:1.5rem;
+    }
+
+    #text{
+        margin-bottom:0;
+    }
+    img{
+        width:10rem;
+        height:10rem;
+        border-radius: 30vw;
+        }
+    #image{
+        background-color: rgba(0, 0, 0, 0.452);
+        border-radius: 30vw;
+    }
+    
     </style>
 </head>
 <body>
@@ -81,7 +111,7 @@
     <h3>Nagłówek:</h3>
     <input type="text" id="naglowek">
     <h3>Piosenkarz:</h3>
-    <select>
+    <select id="piosenkarz">
         <option id="shawn">Shawn Mendes</option>
         <option id="sia">Sia</option>
         <option id="bruno">Bruno Mars</option>
@@ -93,18 +123,74 @@
     <input type="text" id="opis">
     <h3>Kolor:</h3>
     <input type="color" id="kolor">
+    <h3>Kolor tekstu:</h3>
+    <input type="color" id="colorte">
     <button id="generuj">Generuj</button>
     </div>
-    
-    <div id="card">
-        <div id="header"></div>
-        <div id="image"></div>
-        <div id="text"></div>
-        <div id="flavor"></div>
-    </div>
+  
 </div>
     <script>
+        let guzik=document.getElementById("generuj");
+        guzik.addEventListener('click',function(){
+        let naglowek=document.getElementById("naglowek").value;
+        let piosenkarz=document.getElementById("piosenkarz").value;
+        let tekst=document.getElementById("tekst").value;
+        let opis=document.getElementById("opis").value;
+        let kolor=document.getElementById("kolor").value;
+        let kontener=document.getElementById("container");
+        let colorte=document.getElementById("colorte").value;
+        let zdjecie;
 
+        const h1=document.createElement("h1");
+        h1.id = "header";
+        h1.innerHTML = naglowek;
+
+        const div3=document.createElement("div");
+        div3.id = "image";
+        switch (piosenkarz){
+            case 'Shawn Mendes':
+                zdjecie="shawn.png";break;
+            case 'Sia':
+                zdjecie="sia.png";break;
+            case 'Bruno Mars':
+                zdjecie="bruno.png";break;
+            case 'Alan Walker':
+                zdjecie="alan.png";break;
+        }
+        div3.innerHTML="<img src="+zdjecie+">";
+
+        const h3=document.createElement("h3");
+        h3.id = "text";
+        h3.innerHTML = tekst;
+
+        const kreska=document.createElement("hr");
+        kreska.style.setProperty("width","15rem");
+        kreska.style.setProperty("border-color",colorte);
+
+        const div5=document.createElement("div");
+        div5.id = "flavor";
+        div5.innerHTML= opis;
+
+        const div1=document.createElement("div");
+        div1.id = "card";
+        div1.style.setProperty("background-color", kolor);
+
+        div1.style.setProperty("color",colorte);
+
+        kontener.appendChild(div1);
+        div1.appendChild(h1);
+        h1.after(div3);
+        div3.after(h3);
+        h3.after(kreska);
+        kreska.after(div5);
+
+        div1.addEventListener('click',function(){
+            this.remove();
+        });
+       
+        });
+
+        
    </script>
 </body>
 </html>
