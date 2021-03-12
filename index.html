@@ -145,21 +145,29 @@
         let colorte=document.getElementById("colorte").value;
         let zdjecie;
 
+        let shawn = ["shawn.png","shawn1.png","shawn2.png"];
+        let bruno = ["bruno.png","bruno1.png","bruno2.png"]; 
+        let sia = ["sia.png","sia1.png","sia2.png"]; 
+        let alan = ["alan.png","alan1.png","alan2.png"]; 
+
+        let i = Math.floor(Math.random()*(2-0+1))+0;
+        console.log(i);
         const h1=document.createElement("h1");
         h1.id = "header";
         h1.innerHTML = naglowek;
 
         const div3=document.createElement("div");
         div3.id = "image";
+
         switch (piosenkarz){
             case 'Shawn Mendes':
-                zdjecie="shawn.png";break;
+                zdjecie=shawn[i];break;
             case 'Sia':
-                zdjecie="sia.png";break;
+                zdjecie=sia[i];break;
             case 'Bruno Mars':
-                zdjecie="bruno.png";break;
+                zdjecie=bruno[i];break;
             case 'Alan Walker':
-                zdjecie="alan.png";break;
+                zdjecie=alan[i];break;
         }
         div3.innerHTML="<img src="+zdjecie+">";
 
